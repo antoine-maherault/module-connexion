@@ -32,7 +32,7 @@ $conn = new mysqli($servername, $username, $password, 'antoine-maherault_modulec
 
 // get DATA from utilisateurs
 
-$sql = "SELECT * FROM utilisateurs" ;
+$sql = "SELECT ID, login, prenom, nom FROM utilisateurs" ;
 $query = $conn->query($sql);
 $users = $query->fetch_all();
 
@@ -50,7 +50,7 @@ $users = $query->fetch_all();
    </theader>
    <tbody>
       <?php 
-         for($i = 0;isset($users[$i]-1);$i++){
+         for($i = 0;isset($users[$i]);$i++){
          echo "<tr>";
          foreach($users[$i] as $value){
          echo "<td>".$value."&nbsp"."</td>";
