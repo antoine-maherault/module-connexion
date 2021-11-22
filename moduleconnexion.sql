@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:8889
--- Généré le : mar. 16 nov. 2021 à 09:35
+-- Généré le : lun. 22 nov. 2021 à 12:37
 -- Version du serveur :  5.7.34
 -- Version de PHP : 7.4.21
 
@@ -40,7 +40,11 @@ CREATE TABLE `utilisateurs` (
 --
 
 INSERT INTO `utilisateurs` (`id`, `login`, `prenom`, `nom`, `password`) VALUES
-(1, 'admin', 'admin', 'admin', 'admin');
+(1, 'admin', 'admin', 'admin', 'admin'),
+(2, 'Drago', 'Drago', 'Malfoy', '$2y$10$liHMvkVjsDFPDK/zeb9lB.OEnN2IwrsBcCaDQZ0heF087AUpyQZKW'),
+(3, 'Hermione', 'Hermione', 'Granger', '$2y$10$/vO30d4Eo6kLs0no8U5QGOjM7ncijQpDY72cG6wKxuTMrSsc89f3.'),
+(4, 'Crabe', 'Crabe', 'Goyle', '$2y$10$RTkVyDhChlIDFio6uJ0CfO8sJxFZXoIEwU.Tty/wj1A.cxGPbuQ5K'),
+(5, 'Ron', 'Ron', 'Weasley', '$2y$10$N405DwDK6gOOCuMru/22ledVroWy4lF9L9C0UDPTen7x22S5rvKfC');
 
 --
 -- Index pour les tables déchargées
@@ -60,7 +64,7 @@ ALTER TABLE `utilisateurs`
 -- AUTO_INCREMENT pour la table `utilisateurs`
 --
 ALTER TABLE `utilisateurs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

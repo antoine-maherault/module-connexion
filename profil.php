@@ -45,8 +45,7 @@ $users = $query->fetch_all();
 $login=$user[0][1];
 $prenom=$user[0][2];
 $nom=$user[0][3];
-$password1=$user[0][4];
-$password2=$user[0][4];
+$password=$user[0][4];
 
 ?>
 
@@ -63,11 +62,15 @@ $password2=$user[0][4];
         <input type="text" name="lname" value=<?php echo $nom ?>></input>
     <label name="login">Login</label>
         <input type="text" name="login" value=<?php echo $login ?>></input>
-    <label name="password1" type ="password">Password</label>
-        <input type="password" name="password1" value=<?php echo $password1 ?>></input>
-    <label name="password2">Password</label>
-        <input type="password" name="password2" value=<?php echo $password2 ?>></input>
-    <input type="submit" name="submit"></input>
+    <input type="submit" name="submit1"></input>
+    </form>
+
+    <form method="post" class="myform2">
+    <label name="password1" type ="password">Old Password</label>
+        <input type="password" name="password1"></input>
+    <label name="password2">New Password</label>
+        <input type="password" name="password2"></input>
+    <input type="submit" name="submit2"></input>
     </form>
 </div>
 
@@ -76,16 +79,13 @@ $password2=$user[0][4];
 //_________________Tests Formulaire_________________// 
 
 
-if($_POST["submit"]=="Envoyer"){
-    if ($login == NULL && $prenom == NULL && $nom == NULL && $password1 == NULL && $password2 == NULL){}
+if($_POST["submit1"]=="Envoyer"){
+    if ($login == NULL && $prenom == NULL && $nom == NULL){}
     else {
-      $login=$_POST["login"];
-      $prenom=$_POST["fname"];
-      $nom=$_POST["lname"];
-      echo $lname;
-      $password1=$_POST["password1"];
-      $password2=$_POST["password2"];
-        if($login == NULL||$prenom == NULL||$nom == NULL||$password1 == NULL||$password2 == NULL||$password1 != $password2){
+        $login=$_POST["login"];
+        $prenom=$_POST["fname"];
+        $nom=$_POST["lname"];
+        if($login == NULL||$prenom == NULL||$nom == NULL){
             if($login == NULL){
             $_SESSION['update'] = 0;
             echo "
@@ -113,28 +113,7 @@ if($_POST["submit"]=="Envoyer"){
                 }
                 </style>         
                 ";        }
-            if($password1 == NULL){
-               $_SESSION['update'] = 0;
-                echo "
-                <style>
-                input[name='password1'] {
-                background-color: #FFBBBB ;
-                }
-                </style>         
-                ";        }
-            if($password2 == NULL){
-               $_SESSION['update'] = 0;
-                echo "
-                <style>
-                input[name='password2'] {
-                background-color: #FFBBBB ;
-                }
-                </style>         
-                ";        }
-            if($password1 != $password2){
-               $_SESSION['update'] = 0;
-               echo "<p id='update'>passwords non indentiques</p>";
-            }
+            $_SESSION['update'] = 3;
         }
         else{
             foreach($users as $users){   // check if Login already exists
@@ -142,15 +121,13 @@ if($_POST["submit"]=="Envoyer"){
                   echo "<p id='update'>login alreay taken</p>";
                   $taken = 1;
                   $_SESSION['update'] = 0;
-
                 }
             }
             if($taken == false){ // update user infos 
                 $u_login = $user[0][1];
-                $sql = "UPDATE `utilisateurs` SET prenom = '$prenom', login = '$login', nom ='$nom', password ='$password1' WHERE login = '$u_login'";
+                $sql = "UPDATE `utilisateurs` SET prenom = '$prenom', login = '$login', nom ='$nom' WHERE login = '$u_login'";
                 $query = $conn->query($sql);
                 $_SESSION['connected'] = $login;
-               //  echo "update successful";
                 header("Location:profil.php");
                 $_SESSION['update'] = 1;
             }
@@ -158,7 +135,27 @@ if($_POST["submit"]=="Envoyer"){
     }
 }   
 
-if($_SESSION['update'] <= 2){
+if($_POST["submit2"]=="Envoyer"){
+   $password1=$_POST["password1"];
+   $password2=$_POST["password2"];
+   $_SESSION['update'] = 0;
+
+   if (password_verify($_POST['password1'],$password)){
+      $password2 = password_hash($password2, PASSWORD_BCRYPT);
+      $u_login = $user[0][1];
+      $sql = "UPDATE `utilisateurs` SET password = '$password2'WHERE login = '$u_login'";
+      $query = $conn->query($sql);
+      $_SESSION['connected'] = $login;
+      header("Location:profil.php");
+      $_SESSION['update'] = 1;
+   } 
+   else{
+      echo "<p id='update'>wrong password</p>";
+      $_SESSION['update'] = 3;
+   }
+}
+
+if(isset($_SESSION['update']) && $_SESSION['update'] <= 2 ){
    echo "<p id='update'>update successful</p>   ";
    $_SESSION['update'] ++;
 }

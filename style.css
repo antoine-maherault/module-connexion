@@ -92,21 +92,23 @@ a:visited:hover {
 
 /*______________ User profile page ______________*/
 
+.container{
+    display : flex;
+    flex-direction: row;
+    justify-content:  center;
+    align-items:center;
+    background-color:bisque ;
+
+}
+
 .myform2 {
     display : flex;
     flex-direction: column;
     justify-content:  center;
     align-items:center;
-    background-color:bisque ;
-    width : 100%;
+    width : 400px;
     padding : 10px;
-}
-
-.container{
-    display : flex;
-    flex-direction: column;
-    justify-content:  center;
-    align-items:center;
+    height : 200px;
 }
 
 #update{
