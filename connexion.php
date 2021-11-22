@@ -37,7 +37,7 @@ $password = "root";
 
 // Create connection
 
-$conn = new mysqli($servername, $username, $password, 'moduleconnexion');
+$conn = new mysqli($servername, $username, $password, 'antoine-maherault_moduleconnexion');
 
 //_________________select DATA_________________//
 
