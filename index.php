@@ -17,6 +17,9 @@
 <h1 class="title"><i>Mystery</i></h1> 
 </main>
 <footer>
+
+<a id="github"href="https://github.com/antoine-maherault/module-connexion"> G </a>
+
 </footer>
 </body>
 </html>
