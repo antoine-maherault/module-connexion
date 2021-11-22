@@ -47,11 +47,10 @@ $users = $query->fetch_all();
       <th>login</th>
       <th>prenom</th>
       <th>nom</th>
-      <th>password</th>
    </theader>
    <tbody>
       <?php 
-         for($i = 0;isset($users[$i]);$i++){
+         for($i = 0;isset($users[$i]-1);$i++){
          echo "<tr>";
          foreach($users[$i] as $value){
          echo "<td>".$value."&nbsp"."</td>";
