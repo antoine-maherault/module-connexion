@@ -22,7 +22,7 @@
 
 $servername = "localhost";
 $username = "root";
-$password = "root";
+$password = "root_";
 
 // Create connection
 

@@ -48,7 +48,7 @@ $password2=$_POST["password2"];
 
 $servername = "localhost";
 $username = "root";
-$password = "root";
+$password = "root_";
 
 // Create connection
 
