@@ -32,7 +32,7 @@
 //_________________connect to SQL_________________//
 
 $servername = "localhost";
-$username = "root";
+$username = "root_";
 $password = "root_";
 
 // Create connection
