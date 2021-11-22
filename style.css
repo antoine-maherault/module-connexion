@@ -68,11 +68,9 @@ a:visited:hover {
     justify-content:  center;
     align-items:center;
     height: 400px;
+    padding-bottom: 200px;
 }
 
-#github{
-
-}
 /*______________ Inscription ______________*/
 
 .tsignin{
