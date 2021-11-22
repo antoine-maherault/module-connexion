@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html>
  <head>
- <title>TinkerIT</title>
+ <title>Mystery</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="style.css">
-  <link rel="shortcut icon" type="image/jpg" href="content/favicon.ico"/>  <!-- ADD FAVICON !-->
  </head>
 
  <body>
@@ -14,7 +13,7 @@
    <a href="index.php"> Home </a>
    <?php include "header.php";?> 
 </header>
-
+<main>
 <h1 class="tsignin">Users details</h1>
 
 <?php 
@@ -64,6 +63,7 @@ $users = $query->fetch_all();
 
    </table>
    </div>
+   </main>
  </body>
 
  <footer>

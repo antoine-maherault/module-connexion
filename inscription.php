@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html>
  <head>
- <title>TinkerIT</title>
+ <title>Mystery</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="style.css">
-  <link rel="shortcut icon" type="image/jpg" href="content/favicon.ico"/>  <!-- ADD FAVICON !-->
  </head>
 
  <body>
@@ -15,6 +14,7 @@
     <a href="connexion.php"> Connexion </a>
 </header>
 
+<main>
  <h1 class="tsignin"><i>Mystery</i></h1>
 
 <div class="container">
@@ -32,7 +32,7 @@
     <input type="submit" name="submit"></input>
     </form>
 </div>
-
+</main>
  <?php 
 
 // Variables form // 

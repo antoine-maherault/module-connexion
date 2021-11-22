@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
  <head>
- <title>TinkerIT</title>
+ <title>Mystery</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="style.css">
@@ -14,7 +14,7 @@
      <a href="inscription.php"> Inscription </a>
      <a href="connexion.php"> Connexion </a>
 </header>
-
+<main>
  <h1 class="tsignin"><i>Mystery</i></h1>
 
 <div class="container">
@@ -26,7 +26,7 @@
     <input type ="submit"></input>
     </form>
 </div>
-
+</main>
  <?php 
 
 //_________________connect to SQL_________________//

@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html>
  <head>
- <title>TinkerIT</title>
+ <title>Mystery</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="style.css">
-  <link rel="shortcut icon" type="image/jpg" href="content/favicon.ico"/>  <!-- ADD FAVICON !-->
  </head>
 
  <body>
@@ -49,8 +48,8 @@ $password=$user[0][4];
 
 ?>
 
-     
 </header>
+<main>
 <div class="tsignin">
  <h1>Change your personnal informations</h1>
 </div>
@@ -73,13 +72,14 @@ $password=$user[0][4];
     <input type="submit" name="submit2"></input>
     </form>
 </div>
+</main>
 
  <?php 
 
-//_________________Tests Formulaire_________________// 
+//_________________Change Details// 
 
 
-if($_POST["submit1"]=="Envoyer"){
+if($_POST["submit1"]=="Envoyer"){ //update fname + lname + login
     if ($login == NULL && $prenom == NULL && $nom == NULL){}
     else {
         $login=$_POST["login"];
@@ -135,12 +135,12 @@ if($_POST["submit1"]=="Envoyer"){
     }
 }   
 
-if($_POST["submit2"]=="Envoyer"){
+if($_POST["submit2"]=="Envoyer"){ //update password
    $password1=$_POST["password1"];
    $password2=$_POST["password2"];
    $_SESSION['update'] = 0;
 
-   if (password_verify($_POST['password1'],$password)){
+   if (password_verify($_POST['password1'],$password)){ // verify old password + update
       $password2 = password_hash($password2, PASSWORD_BCRYPT);
       $u_login = $user[0][1];
       $sql = "UPDATE `utilisateurs` SET password = '$password2'WHERE login = '$u_login'";
@@ -155,7 +155,7 @@ if($_POST["submit2"]=="Envoyer"){
    }
 }
 
-if(isset($_SESSION['update']) && $_SESSION['update'] <= 2 ){
+if(isset($_SESSION['update']) && $_SESSION['update'] <= 2 ){ //feedback
    echo "<p id='update'>update successful</p>   ";
    $_SESSION['update'] ++;
 }
