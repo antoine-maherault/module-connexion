@@ -1,0 +1,131 @@
+body {
+    background-color: rgb(255, 202, 137);
+    font-family : fantasy;
+} 
+
+/*______________ Header ______________*/
+
+header {
+    display : flex;
+    flex-direction: row;
+    justify-content:  flex-end;
+    align-items: flex-end;
+    gap : 20px;
+    background-color: rgb(255, 202, 137);
+    padding : 30px;
+}
+
+.deco {
+    border:none;
+    font-family : monospace;
+    font-size: 15px;
+    background-color : none;
+    padding-bottom : 5px; 
+    transition-timing-function: cubic-bezier(0.42, 0, 1, 1);
+    transition-duration: 100ms;
+    padding-bottom:10px;
+    padding-top:10px;
+}
+
+.deco:hover {
+    background-color : rgb(202, 202, 202);
+    /* font-style :oblique; */
+}
+.decoform {
+    border:none;
+    font-family : monospace;
+    font-size: 15px;
+}
+
+a {
+    font-family: monospace;
+    text-decoration: none;
+    font-size : 17px;
+    color:white;
+    transition-timing-function: ease-in-out;
+    transition-timing-function: cubic-bezier(0.42, 0, 1, 1);
+    transition-duration: 300ms;
+    padding-bottom : 10px;
+}
+
+a:hover {
+    color:black;
+}
+
+a:visited {
+    color:white;
+}
+
+a:visited:hover {
+    color:black;
+}
+
+/*______________ Index ______________*/
+
+.title{
+    display : flex;
+    flex-direction: column;
+    justify-content:  center;
+    align-items:center;
+    height: 400px;
+}
+
+/*______________ Inscription ______________*/
+
+.tsignin{
+    display : flex;
+    flex-direction: column;
+    justify-content:  center;
+    align-items:center;
+    height: 200px;
+}
+
+.myform {
+    display : flex;
+    flex-direction: column;
+    justify-content:  center;
+    align-items:center;
+    background-color:bisque;
+    width : 500px;
+    padding : 10px;
+}
+
+/*______________ User profile page ______________*/
+
+.myform2 {
+    display : flex;
+    flex-direction: column;
+    justify-content:  center;
+    align-items:center;
+    background-color:bisque ;
+    width : 100%;
+    padding : 10px;
+}
+
+.container{
+    display : flex;
+    flex-direction: column;
+    justify-content:  center;
+    align-items:center;
+}
+
+#update{
+    text-align : center;
+    /* font-style : italic; */
+    color : white;  
+    font-weight : bold;
+    font-size : 19px;
+}
+
+/*______________ Admin users page ______________*/
+
+.admin{
+    display : flex;
+    flex-direction: column;
+    justify-content:  center;
+    align-items:center;
+    background-color: bisque;
+    font-family : monospace;
+}
+
+
