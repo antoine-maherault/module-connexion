@@ -46,7 +46,7 @@ $password2=$_POST["password2"];
 
 //_________________connect to SQL_________________//
 
-$servername = "localhost";
+$servername = "localhost:3306";
 $username = "root_";
 $password = "root_";
 
