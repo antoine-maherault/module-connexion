@@ -78,7 +78,7 @@ $password=$user[0][4];
 
 //_________________Change Details// 
 
-
+if(isset($_SESSION["connected"])){
 if($_POST["submit1"]=="Envoyer"){ //update fname + lname + login
     if ($login == NULL && $prenom == NULL && $nom == NULL){}
     else {
@@ -133,8 +133,10 @@ if($_POST["submit1"]=="Envoyer"){ //update fname + lname + login
             }
         }
     }
-}   
+} 
+}
 
+if(isset($_SESSION["connected"])){
 if($_POST["submit2"]=="Envoyer"){ //update password
    $password1=$_POST["password1"];
    $password2=$_POST["password2"];
@@ -154,10 +156,13 @@ if($_POST["submit2"]=="Envoyer"){ //update password
       $_SESSION['update'] = 3;
    }
 }
+}
 
+if(isset($_SESSION["connected"])){
 if(isset($_SESSION['update']) && $_SESSION['update'] <= 2 ){ //feedback
    echo "<p id='update'>update successful</p>   ";
    $_SESSION['update'] ++;
+}
 }
 
 ?>
