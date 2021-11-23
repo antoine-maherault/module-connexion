@@ -40,7 +40,7 @@ $query = $conn->query($sql);
 $users = $query->fetch_all();
 }
 else{
-   echo "Access denied";
+   echo "<p id = 'update'>Access denied</p>";
 }
 ?>
 
@@ -65,9 +65,7 @@ else{
             echo "</tr>";
             }
          }
-         else{
-            echo "Access denied";
-         }
+        
       ?>
    </tbody>
 
