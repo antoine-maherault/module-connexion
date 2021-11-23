@@ -18,6 +18,9 @@
 
 <?php 
 
+// SECURITE ADMIN 
+
+if($_SESSION["connected"]=="admin"){
 //_________________connect to SQL_________________//
 
 $servername = "localhost:3306";
@@ -35,7 +38,10 @@ $conn = new mysqli($servername, $username, $password, 'antoine-maherault_modulec
 $sql = "SELECT ID, login, prenom, nom FROM utilisateurs" ;
 $query = $conn->query($sql);
 $users = $query->fetch_all();
-
+}
+else{
+   echo "Access denied";
+}
 ?>
 
 <div class="admin">
@@ -50,12 +56,17 @@ $users = $query->fetch_all();
    </theader>
    <tbody>
       <?php 
-         for($i = 0;isset($users[$i]);$i++){
-         echo "<tr>";
-         foreach($users[$i] as $value){
-         echo "<td>".$value."&nbsp"."</td>";
+         if($_SESSION["connected"]=="admin"){
+            for($i = 0;isset($users[$i]);$i++){
+               echo "<tr>";
+            foreach($users[$i] as $value){
+               echo "<td>".$value."&nbsp"."</td>";
+            }
+            echo "</tr>";
+            }
          }
-         echo "</tr>";
+         else{
+            echo "Access denied";
          }
       ?>
    </tbody>
