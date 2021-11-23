@@ -17,8 +17,9 @@
 <h1 class="title"><i>Mystery</i></h1> 
 </main>
 <footer>
-<div class="square">
+  <div class="square">
     <a href="https://github.com/antoine-maherault/module-connexion"> Github </a> 
-  </div>    </footer>
+  </div>    
+</footer>
 </body>
 </html>
