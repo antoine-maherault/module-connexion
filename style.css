@@ -72,6 +72,15 @@ a:visited:hover {
     padding-bottom: 400px;
 }
 
+.square {
+    z-index:2;
+    margin-left : 1%;
+    animation: blinker 2s linear infinite;
+    bottom : 0;
+    position: fixed;
+    margin-bottom :20px; 
+}
+
 /*______________ Inscription ______________*/
 
 .tsignin{
