@@ -123,7 +123,7 @@ if($_POST["submit"]=="Envoyer"){
                 $password1 = password_hash($password1, PASSWORD_BCRYPT);
                 $sql = "INSERT INTO `utilisateurs` (`login`, `prenom`, `nom`, `password`) VALUES('$login', '$prenom', '$nom', '$password1')";
                 $query = $conn->query($sql);
-                echo "<p id='update'>inscription successful</p>";
+                header("Location:connexion.php");
             }
         }
     }
