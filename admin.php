@@ -9,6 +9,12 @@
 
  <body>
 
+ <?php 
+// DISPLAY IF ADMIN
+   session_start();
+   if($_SESSION["connected"]=="admin"){
+ ?>
+
  <header>
    <a href="index.php"> Home </a>
    <?php include "header.php";?> 
@@ -18,9 +24,6 @@
 
 <?php 
 
-// SECURITE ADMIN 
-
-if($_SESSION["connected"]=="admin"){
 //_________________connect to SQL_________________//
 
 $servername = "localhost:3306";
@@ -38,7 +41,7 @@ $conn = new mysqli($servername, $username, $password, 'antoine-maherault_modulec
 $sql = "SELECT ID, login, prenom, nom FROM utilisateurs" ;
 $query = $conn->query($sql);
 $users = $query->fetch_all();
-}
+
 else{
    echo "<p id = 'update'>Access denied</p>";
 }
@@ -72,9 +75,17 @@ else{
    </table>
    </div>
    </main>
- </body>
 
- <footer>
+<?php 
+}
+else{
+  echo "<h1 class='title'>Acces denied</h1>";
+}
+?>
+
+</body>
+
+<footer>
 </footer>
 
 </html>
