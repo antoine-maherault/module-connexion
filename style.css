@@ -1,7 +1,11 @@
+@font-face {
+    font-family: 'Estonia';
+    src: url('Estonia-Regular.ttf') format('truetype'); 
+  }  
 
 body {
     background-color: rgb(255, 202, 137);
-    font-family : fantasy;
+    font-family : Estonia;
 } 
 
 /*______________ Header ______________*/
