@@ -169,7 +169,7 @@ if(isset($_SESSION['update']) && $_SESSION['update'] <= 2 ){ //feedback
 
 <footer>
 </footer>
-<?php } else{ echo "<h1 class='title'>Acces denied</h1>"; } ?>
+<?php } else{ echo "<h1 class='title'>Access denied</h1>"; } ?>
  </body>
  
 </html>
