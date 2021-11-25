@@ -6,6 +6,7 @@
 body {
     background-color: rgb(255, 202, 137);
     font-family : Estonia;
+    font-size : 25px;
 } 
 
 /*______________ Header ______________*/
@@ -74,6 +75,7 @@ a:visited:hover {
     align-items:center;
     height: 400px;
     padding-bottom: 200px;
+    font-size : 70px;   
 }
 
 .square {
@@ -93,6 +95,7 @@ a:visited:hover {
     justify-content:  center;
     align-items:center;
     height: 200px;
+    font-size : 70px;   
 }
 
 .myform {
@@ -103,6 +106,7 @@ a:visited:hover {
     background-color:bisque;
     width : 500px;
     padding : 10px;
+    font-size : 25px;
 }
 
 /*______________ User profile page ______________*/
@@ -131,7 +135,7 @@ a:visited:hover {
     /* font-style : italic; */
     color : white;  
     font-weight : bold;
-    font-size : 19px;
+    font-size : 30px;
 }
 
 /*______________ Admin users page ______________*/
