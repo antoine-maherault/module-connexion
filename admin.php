@@ -56,7 +56,6 @@ $users = $query->fetch_all();
    </theader>
    <tbody>
       <?php 
-         if($_SESSION["connected"]=="admin"){
             for($i = 0;isset($users[$i]);$i++){
                echo "<tr>";
             foreach($users[$i] as $value){
@@ -64,8 +63,6 @@ $users = $query->fetch_all();
             }
             echo "</tr>";
             }
-         }
-        
       ?>
    </tbody>
 

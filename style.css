@@ -148,3 +148,7 @@ a:visited:hover {
     background-color: bisque;
     font-family : monospace;
 }
+
+table {
+    font-size : 20px;
+}

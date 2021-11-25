@@ -55,9 +55,7 @@ $password=$user[0][4];
 
 </header>
 <main>
-<div class="tsignin">
- <h1>Change your personnal informations</h1>
-</div>
+ <h1 class="tsignin">Change your personnal informations</h1>
 <div class="container">
 <form method="post" class="myform2">
     <label name="fname">Prénom</label>
@@ -163,7 +161,6 @@ if(isset($_SESSION['update']) && $_SESSION['update'] <= 2 ){ //feedback
    echo "<p id='update'>update successful</p>   ";
    $_SESSION['update'] ++;
 }
-
 
 ?>
 
