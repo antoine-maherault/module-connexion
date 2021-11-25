@@ -42,9 +42,6 @@ $sql = "SELECT ID, login, prenom, nom FROM utilisateurs" ;
 $query = $conn->query($sql);
 $users = $query->fetch_all();
 
-else{
-   echo "<p id = 'update'>Access denied</p>";
-}
 ?>
 
 <div class="admin">
@@ -79,7 +76,7 @@ else{
 <?php 
 }
 else{
-  echo "<h1 class='title'>Acces denied</h1>";
+  echo "<h1 class='title'>Access denied</h1>";
 }
 ?>
 
